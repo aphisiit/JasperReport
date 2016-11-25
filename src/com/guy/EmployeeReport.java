@@ -69,7 +69,7 @@ public class EmployeeReport {
             File myFile = new File("C:\\Users\\aphis\\Desktop\\EmployeeReport\\Employee.pdf");
             Desktop.getDesktop().open(myFile);
         } catch (IOException ex) {
-            // no application registered for PDFs
+            JOptionPane.showMessageDialog(null,"No application for open file");
         }
 
 
