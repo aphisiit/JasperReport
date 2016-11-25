@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2016-11-25T21:52:56 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employee" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55066188-1117-43ae-b1b6-11c9955cef46">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="EmployeeReport"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IkhSIi4iRU1QTE9ZRUVTIiBBUyAsMTQ4LDU4LGI0OThjYTNhLTEwYjYtNGJlZi04ZTBlLWJlYTc5&#xA;MGQ0ZDU0Yzs="/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="308"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="681"/>
+	<queryString>
+		<![CDATA[select emp.EMPLOYEE_ID as Employee_ID,
+emp.first_name as First_name,
+emp.last_name as Last_name,
+jobs.JOB_TITLE as Job
+from hr.employees emp,HR.JOBS jobs
+where emp.JOB_ID = jobs.JOB_ID
+order by emp.EMPLOYEE_ID]]>
+	</queryString>
+	<field name="EMPLOYEE_ID" class="java.math.BigDecimal"/>
+	<field name="FIRST_NAME" class="java.lang.String"/>
+	<field name="LAST_NAME" class="java.lang.String"/>
+	<field name="JOB" class="java.lang.String"/>
+	<variable name="Variable_1" class="java.lang.String"/>
+	<group name="Depart_Group">
+		<groupExpression><![CDATA[$F{JOB}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement x="10" y="0" width="100" height="30" uuid="9d34b372-2e7e-439d-b4e6-ab9a5503b6fc"/>
+					<textFieldExpression><![CDATA[$F{JOB}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="126" y="0" width="303" height="50" uuid="662b3c7a-b48a-4822-aafb-13041ebe0a7e"/>
+				<textElement textAlignment="Center">
+					<font size="29" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employees report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="30" uuid="27abf64a-edb3-4d09-a86b-6e0e631d0b5e"/>
+				<text><![CDATA[JOB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="0" width="100" height="30" uuid="bdc4f8b1-6a9e-4d09-8ac5-b3eca8eb7852"/>
+				<text><![CDATA[EMPLOYEE_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="30" uuid="54f3f82d-fb8b-4f5a-ae52-ee30c4c879f4"/>
+				<text><![CDATA[FIRST_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="100" height="30" uuid="933491b8-73c9-4cf5-8fe3-531700866da7"/>
+				<text><![CDATA[LAST_NAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="130" y="0" width="100" height="30" uuid="da0d1860-ff4d-4146-ba26-ced7d4f366a7"/>
+				<textFieldExpression><![CDATA[$F{EMPLOYEE_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="30" uuid="becce46b-97d4-425f-818e-7cd38e6a4ae7"/>
+				<textFieldExpression><![CDATA[$F{FIRST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="100" height="30" uuid="37f58f34-4535-48ac-b574-7abe34bf0e4f"/>
+				<textFieldExpression><![CDATA[$F{LAST_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
